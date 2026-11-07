@@ -1,3 +1,5 @@
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,31 +37,13 @@
         <section id="gallery" class="content-section" style="text-align: center;">
             <h2>Visual Art Gallery</h2>
             <p>Explore the collection and order custom designs in the store.</p>
-            
-            <!-- Dynamic Gallery Grid -->
-            <div id="dynamic-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 25px;"></div>
-
-            <script>
-                // Add your image filenames here whenever you upload new ones!
-                const myArtImages = [
-                    "hyperacumulatorplants_with_metallic_shimmer_TODAYS_TOXINS_TO (5).jpg"
-                ];
-
-                const galleryContainer = document.getElementById('dynamic-gallery');
-
-                myArtImages.forEach(filename => {
-                    const card = document.createElement('div');
-                    card.style.cssText = "border: 2px solid #00ff66; padding: 15px; background: rgba(0,0,0,0.6); box-shadow: 0 0 15px rgba(0, 255, 102, 0.2); border-radius: 8px; text-align: center;";
-                    
-                    card.innerHTML = `
-                        <img src="${filename}" alt="Industrial Art" style="width: 100%; height: 220px; object-fit: cover; border-radius: 6px; border: 1px solid #00ff66; margin-bottom: 12px;">
-                        <a href="https://ms-heavy-metal-leaf.myspreadshop.com/create-your-own" target="_blank" class="cyber-btn" style="display: block; padding: 10px; font-size: 0.85rem;">
-                            <span>⚡ ORDER THIS DESIGN</span>
-                        </a>
-                    `;
-                    galleryContainer.appendChild(card);
-                });
-            </script>
+            <div style="margin-top: 25px; border: 2px solid #00ff66; padding: 20px; background: rgba(0,0,0,0.6); box-shadow: 0 0 20px rgba(0, 255, 102, 0.2);">
+                <h3 style="color: #fff; font-family: 'Orbitron', sans-serif; margin-bottom: 10px;">Featured Transmission Art</h3>
+                <p style="color: #cbd5e1; margin-bottom: 20px;">Turning industrial vision into custom gear.</p>
+                <a href="https://ms-heavy-metal-leaf.myspreadshop.com/create-your-own" target="_blank" class="cyber-btn" style="display: inline-block; padding: 15px 30px;">
+                    <span>⚡ ORDER CUSTOM DESIGNS</span>
+                </a>
+            </div>
         </section>
 
         <section id="media" class="content-section">
