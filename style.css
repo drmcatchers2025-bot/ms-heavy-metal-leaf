@@ -1,75 +1,95 @@
-/* Base page styling with a dark desert storm atmosphere */
+/* Base clean dark theme - No lightning glitches */
 body {
-    background-color: #08080a;
-    background-image: linear-gradient(to bottom, #111418, #050507);
-    color: #e0e0e0;
+    background-color: #0b0c10;
+    color: #c5c6c7;
     margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-    position: relative;
-    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
-/* Lightning flash animation overlay */
-body::after {
-    content: "";
-    position: fixed;
+/* Header styling with normal, readable fonts */
+.site-header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #1f2833;
+    border-bottom: 2px solid #66fcf1;
+}
+
+.site-header h1 {
+    font-size: 2rem;
+    color: #66fcf1;
+    margin: 0 0 0.5rem 0;
+}
+
+.site-header .subtitle {
+    font-size: 1rem;
+    color: #c5c6c7;
+    margin-bottom: 1.5rem;
+}
+
+.site-header nav a {
+    color: #66fcf1;
+    margin: 0 0.75rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.site-header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Window Card Layout for Sections */
+.content-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #1f2833;
+    border: 1px solid #45a29e;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.content-section h2 {
+    color: #66fcf1;
+    font-size: 1.4rem;
+    margin-top: 0;
+    border-bottom: 1px solid #45a29e;
+    padding-bottom: 0.5rem;
+}
+
+.content-section p {
+    font-size: 0.95rem;
+}
+
+/* Video & Shop Containers */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin-top: 1rem;
+}
+
+.video-container iframe {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0);
-    pointer-events: none;
-    z-index: 9999;
-    animation: lightningFlash 7s infinite;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
 }
 
-@keyframes lightningFlash {
-    0%, 90%, 94%, 98% {
-        background: rgba(255, 255, 255, 0);
-    }
-    91%, 95% {
-        background: rgba(255, 255, 255, 0.15); /* Quick flash of light */
-    }
-    92% {
-        background: rgba(255, 255, 255, 0.05);
-    }
-}
-
-/* Container for custom link nodes */
-.custom-link-node {
-    background-size: cover;
-    background-position: center;
-    border: 2px solid #ffaa00; /* Industrial accent color */
-    padding: 2rem;
-    margin: 1rem auto;
-    max-width: 800px;
-    text-align: center;
-    border-radius: 6px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.7);
-}
-
-.custom-link-node a {
-    color: #ffffff;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-/* Shop section and iframe container styling */
 .shop-container {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    background: #0d0d0d;
-    box-sizing: border-box;
+    margin-top: 1rem;
 }
 
 .shop-container iframe {
     width: 100% !important;
-    min-height: 800px;
+    min-height: 600px;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
     background: #ffffff;
 }
