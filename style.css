@@ -1,74 +1,81 @@
-/* Base clean dark theme - No lightning glitches */
 body {
     background-color: #0b0c10;
     color: #c5c6c7;
     margin: 0;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-/* Header styling with normal, readable fonts */
 .site-header {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
     background: #1f2833;
     border-bottom: 2px solid #66fcf1;
 }
 
 .site-header h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #66fcf1;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.25rem 0;
 }
 
 .site-header .subtitle {
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: #c5c6c7;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .site-header nav a {
     color: #66fcf1;
-    margin: 0 0.75rem;
+    margin: 0 0.5rem;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: bold;
 }
 
-.site-header nav a:hover {
-    text-decoration: underline;
-}
-
-/* Window Card Layout for Sections */
 .content-section {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 1.5rem;
+    max-width: 700px;
+    margin: 1.5rem auto;
+    padding: 1.2rem;
     background: #1f2833;
     border: 1px solid #45a29e;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    border-radius: 6px;
 }
 
 .content-section h2 {
     color: #66fcf1;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     margin-top: 0;
     border-bottom: 1px solid #45a29e;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
 }
 
 .content-section p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
 }
 
-/* Video & Shop Containers */
+.store-link-btn {
+    display: inline-block;
+    background: #66fcf1;
+    color: #0b0c10;
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+.store-link-btn:hover {
+    background: #45a29e;
+}
+
 .video-container {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
     height: 0;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
 }
 
 .video-container iframe {
@@ -79,17 +86,4 @@ body {
     height: 100%;
     border: none;
     border-radius: 4px;
-}
-
-.shop-container {
-    width: 100%;
-    margin-top: 1rem;
-}
-
-.shop-container iframe {
-    width: 100% !important;
-    min-height: 600px;
-    border: none;
-    border-radius: 4px;
-    background: #ffffff;
 }
