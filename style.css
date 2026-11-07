@@ -1,73 +1,89 @@
 body {
-    background-color: #0b0c10;
-    color: #c5c6c7;
+    background-color: #05160a;
+    background-image: linear-gradient(rgba(5, 22, 10, 0.85), rgba(5, 22, 10, 0.95)), url('hyperacumulatorplants_with_metallic_shimmer_TODAYS_TOXINS_TO (5).jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #d8f3dc;
     margin: 0;
     font-family: Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 13px;
+    line-height: 1.4;
 }
 
 .site-header {
     text-align: center;
-    padding: 1.5rem 1rem;
-    background: #1f2833;
-    border-bottom: 2px solid #66fcf1;
+    padding: 1rem;
+    background: rgba(15, 35, 20, 0.9);
+    border-bottom: 2px solid #52b788;
 }
 
 .site-header h1 {
-    font-size: 1.5rem;
-    color: #66fcf1;
-    margin: 0 0 0.25rem 0;
+    font-size: 1.3rem;
+    color: #74c69d;
+    margin: 0 0 0.15rem 0;
 }
 
 .site-header .subtitle {
-    font-size: 0.85rem;
-    color: #c5c6c7;
-    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    color: #b7e4c7;
+    margin-bottom: 0.75rem;
 }
 
 .site-header nav a {
-    color: #66fcf1;
-    margin: 0 0.5rem;
+    color: #52b788;
+    margin: 0 0.4rem;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: bold;
+}
+
+/* Compact Grid Layout to reduce scrolling */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
 }
 
 .content-section {
-    max-width: 700px;
-    margin: 1.5rem auto;
-    padding: 1.2rem;
-    background: #1f2833;
-    border: 1px solid #45a29e;
+    background: rgba(15, 35, 20, 0.85);
+    border: 1px solid #52b788;
     border-radius: 6px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
 }
 
 .content-section h2 {
-    color: #66fcf1;
-    font-size: 1.1rem;
+    color: #74c69d;
+    font-size: 1rem;
     margin-top: 0;
-    border-bottom: 1px solid #45a29e;
-    padding-bottom: 0.3rem;
+    border-bottom: 1px solid #2d6a4f;
+    padding-bottom: 0.25rem;
 }
 
 .content-section p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
 }
 
-.store-link-btn {
+.store-link-btn, .social-btn {
     display: inline-block;
-    background: #66fcf1;
-    color: #0b0c10;
-    padding: 0.6rem 1.2rem;
+    background: #52b788;
+    color: #05160a;
+    padding: 0.4rem 0.8rem;
     text-decoration: none;
     font-weight: bold;
     border-radius: 4px;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
+    font-size: 0.75rem;
+    margin-right: 0.3rem;
 }
 
-.store-link-btn:hover {
-    background: #45a29e;
+.store-link-btn:hover, .social-btn:hover {
+    background: #74c69d;
 }
 
 .video-container {
@@ -75,7 +91,7 @@ body {
     width: 100%;
     padding-bottom: 56.25%;
     height: 0;
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
 }
 
 .video-container iframe {
