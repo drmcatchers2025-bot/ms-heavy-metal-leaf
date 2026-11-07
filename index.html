@@ -8,58 +8,126 @@
 </head>
 <body>
 
-    <header class="site-header">
-        <h1>MS. HEAVY METAL LEAF</h1>
-        <p class="subtitle">Bio-Bot Hyperaccumulator System & Industrial Reclamation Project</p>
-        <nav>
-            <a href="#bio">[ BIO ]</a>
-            <a href="#divination">[ DIVINATION ]</a>
-            <a href="#posts">[ POSTS ]</a>
-            <a href="#network">[ NETWORK ]</a>
-            <a href="#merch">[ STORE ]</a>
-        </nav>
+    <!-- LinkedIn-Style Top Navigation Bar -->
+    <header class="li-nav-bar">
+        <div class="li-nav-content">
+            <span class="li-brand">MS. HEAVY METAL LEAF</span>
+            <nav class="li-nav-links">
+                <a href="#feed">Feed</a>
+                <a href="#divination">Divination</a>
+                <a href="#network">Network</a>
+                <a href="https://your-spreadshop-url-here" target="_blank">Store</a>
+            </nav>
+        </div>
     </header>
 
-    <div class="dashboard-grid">
-        <!-- Bio Window -->
-        <section id="bio" class="content-section">
-            <h2>ROOTS & ECOSYSTEM</h2>
-            <p>Raised in a self-built rock-and-mud house on the Hopi/Navajo reservation. Survived severe infection and ended alcohol addiction in 2017.</p>
-            <p>Anchored in Bremerton, WA, building the <strong>Ms. Heavy Metal Leaf</strong> hyperaccumulator system—transmuting past toxins into heavy industrial art and digital creation.</p>
-        </section>
+    <!-- Main LinkedIn Feed Layout Container -->
+    <div class="li-container" id="feed">
 
-        <!-- Daily Divination Window -->
-        <section id="divination" class="content-section">
-            <h2>DAILY DIVINATION</h2>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Daily Divination Reading" loading="lazy" allowfullscreen></iframe>
+        <!-- Left Column: Profile / Bio Mini Card -->
+        <aside class="li-sidebar">
+            <div class="li-card">
+                <h3>Ms. Heavy Metal Leaf</h3>
+                <p class="li-card-subtitle">Bio-Bot Hyperaccumulator System & Industrial Reclamation</p>
+                <hr>
+                <p class="li-bio-snippet">Raised in a self-built rock-and-mud house on the Hopi/Navajo reservation. Transmuting past toxins into heavy art and digital creation.</p>
+                <div class="li-sidebar-links">
+                    <a href="https://www.youtube.com/@YOUR_YOUTUBE" target="_blank">YouTube</a>
+                    <a href="url?id=9" target="_blank">Facebook</a>
+                    <a href="https://suno.com/@YOUR_SUNO" target="_blank">Suno Audio</a>
+                </div>
             </div>
-        </section>
+        </aside>
 
-        <!-- Daily Posts Window -->
-        <section id="posts" class="content-section">
-            <h2>DAILY POSTS</h2>
-            <p>Latest thoughts from the grid, botanical research, and heavy frequencies.</p>
-        </section>
+        <!-- Center Column: Feed & Daily Divination Input -->
+        <main class="li-main-feed">
 
-        <!-- Social Network Window -->
-        <section id="network" class="content-section">
-            <h2>NETWORK & SOCIALS</h2>
-            <p>Connect across the digital grid:</p>
-            <!-- Replace these placeholder links with your exact profile URLs -->
-            <a href="https://www.youtube.com/@YOUR_YOUTUBE" target="_blank" class="social-btn">YouTube</a>
-            <a href="https://www.facebook.com/YOUR_FACEBOOK" target="_blank" class="social-btn">Facebook</a>
-            <a href="https://suno.com/@YOUR_SUNO" target="_blank" class="social-btn">Suno Audio</a>
-        </section>
+            <!-- Daily Divination Update Box (Where you paste your link) -->
+            <section id="divination" class="li-card li-post-box">
+                <h2>📅 Daily Divination Transmission</h2>
+                <p>Paste your daily reading link or embed code below to update today's video feed:</p>
+                
+                <!-- Quick input form for daily updates -->
+                <form onsubmit="updateDivination(event)" class="li-input-form">
+                    <input type="text" id="videoLinkInput" placeholder="Paste YouTube / Video link here..." required>
+                    <button type="submit" class="li-post-btn">Publish Daily Reading</button>
+                </form>
 
-        <!-- Merchandise Window -->
-        <section id="merch" class="content-section">
-            <h2>OFFICIAL MERCHANDISE</h2>
-            <p>Browse official gear from the green industrial grid.</p>
-            <!-- Replace YOUR_STORE_URL with your actual Spreadshop link -->
-            <a href="https://your-spreadshop-url-here" target="_blank" class="store-link-btn">VISIT STORE ➔</a>
-        </section>
+                <!-- Video Display Frame -->
+                <div class="video-container" id="activeVideoContainer">
+                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Daily Divination Reading" loading="lazy" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <!-- LinkedIn Style Post Creation Box (For Anyone to Post) -->
+            <section class="li-card li-post-box">
+                <h3>Create a Post</h3>
+                <textarea placeholder="Share your thoughts with the network..." rows="3" id="userPostText"></textarea>
+                <button onclick="addPost()" class="li-post-btn">Post</button>
+            </section>
+
+            <!-- Community / Daily Posts Feed Stream -->
+            <div id="postsStream">
+                <article class="li-card li-feed-post">
+                    <div class="post-header">
+                        <strong>System Admin</strong> <span class="post-time">· Today</span>
+                    </div>
+                    <p>Welcome to the live grid feed. Latest thoughts from botanical research, heavy frequencies, and industrial reclamation are online.</p>
+                    <div class="post-comments-section">
+                        <input type="text" placeholder="Add a comment..." class="comment-input">
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                </article>
+            </div>
+
+        </main>
+
+        <!-- Right Column: Quick Links & Store -->
+        <aside class="li-sidebar">
+            <div class="li-card">
+                <h3>Industrial Grid</h3>
+                <p>Browse official gear from the green industrial ecosystem.</p>
+                <a href="https://your-spreadshop-url-here" target="_blank" class="store-link-btn">VISIT STORE ➔</a>
+            </div>
+        </aside>
+
     </div>
+
+    <!-- Simple Script to make the Daily Video link update dynamically -->
+    <script>
+        function updateDivination(event) {
+            event.preventDefault();
+            const inputVal = document.getElementById('videoLinkInput').value;
+            const iframe = document.querySelector('#activeVideoContainer iframe');
+            // Converts standard youtube links to embed links automatically if pasted
+            let embedUrl = inputVal;
+            if (inputVal.includes('watch?v=')) {
+                embedUrl = inputVal.replace('watch?v=', 'embed/');
+            } else if (inputVal.includes('youtu.be/')) {
+                embedUrl = inputVal.replace('youtu.be/', 'www.youtube.com/embed/');
+            }
+            iframe.src = embedUrl;
+            alert('Daily Divination video updated for today!');
+        }
+
+        function addPost() {
+            const text = document.getElementById('userPostText').value;
+            if (!text) return;
+            const stream = document.getElementById('postsStream');
+            const newPost = document.createElement('article');
+            newPost.className = 'li-card li-feed-post';
+            newPost.innerHTML = `
+                <div class="post-header"><strong>Community Member</strong> <span class="post-time">· Just now</span></div>
+                <p>${text}</p>
+                <div class="post-comments-section">
+                    <input type="text" placeholder="Add a comment..." class="comment-input">
+                    <button class="comment-btn">Comment</button>
+                </div>
+            `;
+            stream.prepend(newPost);
+            document.getElementById('userPostText').value = '';
+        }
+    </script>
 
 </body>
 </html>
