@@ -33,8 +33,8 @@
                 <p class="li-bio-snippet">Raised in a self-built rock-and-mud house on the Hopi/Navajo reservation. Transmuting past toxins into heavy art and digital creation.</p>
                 <div class="li-sidebar-links">
                     <a href="https://www.youtube.com/@YOUR_YOUTUBE" target="_blank">YouTube</a>
-                    <a href="url?id=9" target="_blank">Facebook</a>
-                    <a href="https://suno.com/@YOUR_SUNO" target="_blank">Suno Audio</a>
+                    <a href="https://www.facebook.com/YOUR_FACEBOOK" target="_blank">Facebook</a>
+                    <a href="https://suno.com/@dawnrainstarmilazzo" target="_blank">Suno Audio</a>
                 </div>
             </div>
         </aside>
@@ -45,7 +45,7 @@
             <!-- Daily Divination Update Box (Where you paste your link) -->
             <section id="divination" class="li-card li-post-box">
                 <h2>📅 Daily Divination Transmission</h2>
-                <p>Paste your daily reading link or embed code below to update today's video feed:</p>
+                <p>Paste your daily reading link below to update today's video feed:</p>
                 
                 <!-- Quick input form for daily updates -->
                 <form onsubmit="updateDivination(event)" class="li-input-form">
@@ -93,13 +93,12 @@
 
     </div>
 
-    <!-- Simple Script to make the Daily Video link update dynamically -->
+    <!-- Script to update daily video and add feed posts -->
     <script>
         function updateDivination(event) {
             event.preventDefault();
             const inputVal = document.getElementById('videoLinkInput').value;
             const iframe = document.querySelector('#activeVideoContainer iframe');
-            // Converts standard youtube links to embed links automatically if pasted
             let embedUrl = inputVal;
             if (inputVal.includes('watch?v=')) {
                 embedUrl = inputVal.replace('watch?v=', 'embed/');
