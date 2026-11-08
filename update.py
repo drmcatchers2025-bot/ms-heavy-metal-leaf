@@ -4,8 +4,7 @@ import xml.etree.ElementTree as ET
 from google import genai
 
 # 1. Fetch Latest YouTube Video ID from your RSS feed
-# Replace with your actual YouTube Channel ID if needed
-CHANNEL_ID = "UC_YOUR_CHANNEL_ID_HERE" 
+CHANNEL_ID = "UCseflqXOifRqeliqquNoYUg" 
 rss_url = f"https://www.youtube.com/feeds/videos.xml?channel_id={CHANNEL_ID}"
 
 try:
