@@ -3,92 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ms. Heavy Metal Leaf | Bento Grid Ecosystem</title>
+    <title>Ms. Heavy Metal Leaf | Ecosystem</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="grid-4col">
-    
-    <!-- COLUMN 1: BIO & LINKS -->
-    <div class="col">
-      <div class="card">
-        <h2>Roots & Ecosystem</h2>
-        <p>Raised in a self-built rock-and-mud house on the Hopi/Navajo reservation. Survived severe infection and ended alcohol addiction in 2017.</p>
-        <p style="margin-top: 8px;">Anchored in Bremerton, WA, building the <strong>Ms. Heavy Metal Leaf</strong> hyperaccumulator system—transmuting past toxins into heavy art.</p>
-      </div>
-      <div class="card links">
-        <h2>Network & Socials</h2>
-        <a href="https://www.facebook.com/RAINSTAR25" target="_blank">Facebook</a>
-        <a href="https://www.linkedin.com/in/dawn-milazzo-59818b380/" target="_blank">LinkedIn</a>
-        <a href="https://suno.com/@dawnrainstarmilazzo" target="_blank">Suno Audio</a>
-      </div>
-    </div>
+    <!-- Top Bar -->
+    <header class="top-nav">
+        <h1>MS. HEAVY METAL LEAF</h1>
+        <nav>
+            <a href="#bio">Bio</a>
+            <a href="#divination">Divination</a>
+            <a href="#feed">Feed</a>
+            <a href="https://your-spreadshop-url-here" target="_blank">Store</a>
+        </nav>
+    </header>
 
-    <!-- COLUMN 2: MUSIC & MUSIC VIDEOS -->
-    <div class="col">
-      <div class="card">
-        <h2>Audio Transmissions</h2>
-        <p>Stream heavy industrial soundscapes directly from Suno.</p>
-        <a href="https://suno.com/@dawnrainstarmilazzo" target="_blank" class="store-link-btn" style="margin-top:10px;">Listen on Suno ➔</a>
-      </div>
-      <div class="card">
-        <h2>Music Visuals</h2>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Music Video" loading="lazy" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-
-    <!-- COLUMN 3: DAILY DIVINATION READING -->
-    <div class="col">
-      <div class="card">
-        <h2>Daily Divination</h2>
-        <p>Paste today's video link below to update the reading feed:</p>
+    <!-- Main Stacked Container (Flows Up & Down) -->
+    <div class="stack-container">
         
-        <form onsubmit="updateDivination(event)" class="li-input-form" style="margin-top: 8px;">
-            <input type="text" id="videoLinkInput" placeholder="Paste YouTube link here..." required>
-            <button type="submit" class="li-post-btn">Update Reading</button>
-        </form>
+        <!-- 1. Bio Section -->
+        <section id="bio" class="card">
+            <h2>Roots & Ecosystem</h2>
+            <p>Raised in a self-built rock-and-mud house on the Hopi/Navajo reservation. Survived severe infection and ended alcohol addiction in 2017.</p>
+            <p>Anchored in Bremerton, WA, building the <strong>Ms. Heavy Metal Leaf</strong> hyperaccumulator system—transmuting past toxins into heavy art.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/RAINSTAR25" target="_blank" class="social-btn">Facebook</a>
+                <a href="https://www.linkedin.com/in/dawn-milazzo-59818b380/" target="_blank" class="social-btn">LinkedIn</a>
+                <a href="https://suno.com/@dawnrainstarmilazzo" target="_blank" class="social-btn">Suno Audio</a>
+            </div>
+        </section>
 
-        <div class="video-container" id="activeVideoContainer" style="margin-top: 8px;">
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Daily Divination Reading" loading="lazy" allowfullscreen></iframe>
-        </div>
-      </div>
+        <!-- 2. Daily Divination Section (With Link Updater) -->
+        <section id="divination" class="card">
+            <h2>📅 Daily Divination Transmission</h2>
+            <p>Paste today's video link below to update the reading feed:</p>
+            
+            <form onsubmit="updateDivination(event)" class="li-input-form">
+                <input type="text" id="videoLinkInput" placeholder="Paste YouTube / Video link here..." required>
+                <button type="submit" class="li-post-btn">Publish Daily Reading</button>
+            </form>
+
+            <div class="video-container" id="activeVideoContainer">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Daily Divination Reading" loading="lazy" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- 3. Community Feed & Comments Section -->
+        <section id="feed" class="card">
+            <h2>Network Feed & Discussions</h2>
+            
+            <!-- Create a Post Box -->
+            <div style="margin-bottom: 15px;">
+                <textarea placeholder="Share your thoughts with the network..." rows="2" id="userPostText" style="width:100%; background:#0b1f10; border:1px solid #40916c; border-radius:6px; color:#fff; padding:10px; font-size:0.85rem; box-sizing:border-box; margin-bottom:8px;"></textarea>
+                <button onclick="addPost()" class="li-post-btn">Post to Feed</button>
+            </div>
+
+            <!-- Feed Stream -->
+            <div id="postsStream">
+                <div class="li-feed-post">
+                    <p><strong>System Admin</strong> · Today</p>
+                    <p>Welcome to the live grid feed. Latest thoughts from botanical research, heavy frequencies, and industrial reclamation are online.</p>
+                    <div class="post-comments-section">
+                        <input type="text" placeholder="Add a comment..." class="comment-input">
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Official Store Section -->
+        <section class="card">
+            <h2>Official Merchandise Store</h2>
+            <p>Browse official gear from the green industrial ecosystem.</p>
+            <a href="https://your-spreadshop-url-here" target="_blank" class="store-link-btn" style="margin-top: 10px;">VISIT STORE ➔</a>
+        </section>
+
     </div>
 
-    <!-- COLUMN 4: STOREFRONT & COMMUNITY FEED -->
-    <div class="col">
-      <div class="card">
-        <h2>Official Storefront</h2>
-        <p>Browse official gear from the green industrial grid.</p>
-        <!-- Replace YOUR_STORE_URL with your actual Spreadshop link -->
-        <a href="https://your-spreadshop-url-here" target="_blank" class="store-link-btn" style="margin-top: 10px;">VISIT STORE ➔</a>
-      </div>
-      <div class="card">
-        <h2>Network Feed</h2>
-        <p>Welcome to the live grid. Check back daily for new transmissions and transmissions.</p>
-      </div>
-    </div>
+    <!-- Script to update daily video and add posts -->
+    <script>
+        function updateDivination(event) {
+            event.preventDefault();
+            const inputVal = document.getElementById('videoLinkInput').value;
+            const iframe = document.querySelector('#activeVideoContainer iframe');
+            let embedUrl = inputVal;
+            if (inputVal.includes('watch?v=')) {
+                embedUrl = inputVal.replace('watch?v=', 'embed/');
+            } else if (inputVal.includes('youtu.be/')) {
+                embedUrl = inputVal.replace('youtu.be/', 'www.youtube.com/embed/');
+            }
+            iframe.src = embedUrl;
+            alert('Daily Divination video updated for today!');
+        }
 
-  </div>
-
-  <!-- Script to update daily video dynamically -->
-  <script>
-      function updateDivination(event) {
-          event.preventDefault();
-          const inputVal = document.getElementById('videoLinkInput').value;
-          const iframe = document.querySelector('#activeVideoContainer iframe');
-          let embedUrl = inputVal;
-          if (inputVal.includes('watch?v=')) {
-              embedUrl = inputVal.replace('watch?v=', 'embed/');
-          } else if (inputVal.includes('youtu.be/')) {
-              embedUrl = inputVal.replace('youtu.be/', 'www.youtube.com/embed/');
-          }
-          iframe.src = embedUrl;
-          alert('Daily Divination video updated for today!');
-      }
-  </script>
+        function addPost() {
+            const text = document.getElementById('userPostText').value;
+            if (!text) return;
+            const stream = document.getElementById('postsStream');
+            const newPost = document.createElement('div');
+            newPost.className = 'li-feed-post';
+            newPost.innerHTML = `
+                <p><strong>Community Member</strong> · Just now</p>
+                <p>${text}</p>
+                <div class="post-comments-section">
+                    <input type="text" placeholder="Add a comment..." class="comment-input">
+                    <button class="comment-btn">Comment</button>
+                </div>
+            `;
+            stream.prepend(newPost);
+            document.getElementById('userPostText').value = '';
+        }
+    </script>
 
 </body>
 </html>
