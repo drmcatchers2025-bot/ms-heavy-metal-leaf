@@ -110,7 +110,7 @@ body {
     border-radius: 4px;
 }
 
-.li-input-form {
+.li-input-form input {
     width: 100%;
     background: #0b1f10;
     border: 1px solid #40916c;
@@ -135,4 +135,33 @@ body {
 
 .li-post-btn:hover {
     background: #74c69d;
+}
+
+/* Scrollable Horizontal Gallery Strip */
+.gallery-scroll-container {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.gallery-item {
+    min-width: 220px;
+    max-width: 220px;
+    background: #0b1f10;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #2d6a4f;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 4px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    margin-bottom: 8px;
 }
