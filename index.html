@@ -14,6 +14,10 @@
 				--accent: #d4af37;
 			}
 
+			html {
+				scroll-behavior: smooth;
+			}
+
 			body {
 				background-color: var(--bg-color);
 				color: var(--text-main);
@@ -36,6 +40,10 @@
 				padding: 20px 0;
 				border-bottom: 1px solid var(--card-border);
 				margin-bottom: 40px;
+				position: sticky;
+				top: 0;
+				background-color: var(--bg-color);
+				z-index: 1000;
 			}
 
 			.logo-area {
@@ -150,6 +158,21 @@
 				margin-bottom: 10px;
 			}
 
+			/* Content Sections that open/target */
+			.content-section {
+				background: var(--card-bg);
+				border: 1px solid var(--card-border);
+				border-radius: 16px;
+				padding: 30px;
+				margin-bottom: 20px;
+				scroll-margin-top: 100px;
+			}
+
+			.content-section h2 {
+				color: var(--accent);
+				margin-top: 0;
+			}
+
 			/* Footer */
 			footer {
 				text-align: center;
@@ -174,13 +197,12 @@
 			<header class="top-nav">
 				<div class="logo-area">🌿 MS. HEAVY METAL LEAF</div>
 				<nav class="menu">
-					<a href="#images">Images</a>
-					<a href="#videos">Videos</a>
-					<a href="#astrology">Astrology</a>
-					<a href="#comics">Comics</a>
-					<a href="#divination">Divination</a>
-					<a href="#songs">Songs</a>
-					<a href="#links">Links</a>
+					<a href="#images-section">Images</a>
+					<a href="#videos-section">Videos</a>
+					<a href="#astrology-section">Astrology</a>
+					<a href="#comics-section">Comics</a>
+					<a href="#divination-section">Divination</a>
+					<a href="#songs-section">Songs</a>
 				</nav>
 			</header>
 
@@ -189,18 +211,18 @@
 				<div class="hero-content">
 					<h1>Heavy metals, art, and daily eco-hero magic.</h1>
 					<p>Hyperaccumulator plants, stories, stars, songs, and signs. All in one place for the explorers and the green-minded curious.</p>
-					<a href="#images" class="btn">Explore &rarr;</a>
+					<a href="#images-section" class="btn">Explore &rarr;</a>
 				</div>
 				<div class="hero-image">
 					<img src="hero-bg.jpg" alt="Ms. Heavy Metal Leaf Hero" />
 				</div>
 			</section>
 
-			<!-- Multi-Card Dashboard Grid -->
+			<!-- Multi-Card Dashboard Grid (Clickable Buttons) -->
 			<div class="grid-dashboard">
 				
 				<!-- Images Card -->
-				<a href="#images" class="card span-2" id="images">
+				<a href="#images-section" class="card span-2">
 					<div>
 						<h3>Images & Gallery</h3>
 						<p>Moments, moods, and botanical hyperaccumulators.</p>
@@ -209,7 +231,7 @@
 				</a>
 
 				<!-- Videos Card -->
-				<a href="#videos" class="card span-2" id="videos">
+				<a href="#videos-section" class="card span-2">
 					<div>
 						<h3>Videos</h3>
 						<p>Stories in motion and latest YouTube updates.</p>
@@ -217,7 +239,7 @@
 				</a>
 
 				<!-- Astrology Card -->
-				<a href="#astrology" class="card" id="astrology">
+				<a href="#astrology-section" class="card">
 					<div>
 						<h3>Astrology</h3>
 						<p>Monthly cosmic matches & celestial guidance.</p>
@@ -225,7 +247,7 @@
 				</a>
 
 				<!-- Daily Comics Card -->
-				<a href="#comics" class="card" id="comics">
+				<a href="#comics-section" class="card">
 					<div>
 						<h3>Daily Comics</h3>
 						<p>A little laugh, a little truth from AI Studio drops.</p>
@@ -233,7 +255,7 @@
 				</a>
 
 				<!-- Divination Card -->
-				<a href="#divination" class="card" id="divination">
+				<a href="#divination-section" class="card">
 					<div>
 						<h3>Divination</h3>
 						<p>Tarot and intuitive reflection cards.</p>
@@ -241,13 +263,44 @@
 				</a>
 
 				<!-- Songs / Music Card -->
-				<a href="#songs" class="card" id="songs">
+				<a href="#songs-section" class="card">
 					<div>
 						<h3>Songs</h3>
 						<p>Soundtracks and audio tracks for your day.</p>
 					</div>
 				</a>
 
+			</div>
+
+			<!-- Expanded Sections Content (Where the buttons jump to) -->
+			<div id="images-section" class="content-section">
+				<h2>Images & Gallery</h2>
+				<p>Display your high-resolution artwork, photo logs, and plant collections here.</p>
+			</div>
+
+			<div id="videos-section" class="content-section">
+				<h2>Videos</h2>
+				<p>Embed your YouTube videos or video player links here.</p>
+			</div>
+
+			<div id="astrology-section" class="content-section">
+				<h2>Astrology</h2>
+				<p>Your monthly cosmic matches, planetary prescriptions, and celestial breakdowns.</p>
+			</div>
+
+			<div id="comics-section" class="content-section">
+				<h2>Daily Comics</h2>
+				<p>Your daily AI Studio comic strips and eco-hero adventures.</p>
+			</div>
+
+			<div id="divination-section" class="content-section">
+				<h2>Divination</h2>
+				<p>Tarot reads, card pulls, and intuitive daily draws.</p>
+			</div>
+
+			<div id="songs-section" class="content-section">
+				<h2>Songs & Music</h2>
+				<p>Your audio player tracks and music files.</p>
 			</div>
 
 			<!-- Footer -->
