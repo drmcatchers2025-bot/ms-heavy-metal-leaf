@@ -43,11 +43,11 @@
             </form>
 
             <div class="video-container" id="activeVideoContainer">
-                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Daily Divination Reading" loading="lazy" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/e57vmLH3ACg" title="Daily Divination Reading" loading="lazy" allowfullscreen></iframe>
             </div>
         </section>
 
-        <!-- Daily Astrology & Horoscope Section -->
+        <!-- Personal Astrology & Horoscope Section -->
         <section id="horoscope" class="card">
             <h2>✨ Daily Astrology Readings</h2>
             <p>Type or update today's short astrology snippet below:</p>
@@ -59,10 +59,8 @@
 
             <div id="activeHoroscope" style="margin-top: 10px; background: #0b1f10; padding: 12px; border-radius: 6px; border: 1px solid #2d6a4f;">
                 <p style="font-style: italic; color: #b7e4c7; margin-bottom: 10px;">Today's astrology snippet will appear here once published...</p>
+                <a href="https://aistudio.google.com/" target="_blank" class="store-link-btn" style="display: block; text-align: center;">Get an Extensive Reading on Google AI Studio ➔</a>
             </div>
-
-            <!-- Link to Google AI Studio for extensive readings -->
-            <a href="https://aistudio.google.com/" target="_blank" class="store-link-btn" style="display: block; text-align: center; margin-top: 12px;">Get an Extensive Reading on Google AI Studio ➔</a>
         </section>
 
         <!-- Apps Section (With Instant App Adder Form) -->
@@ -72,114 +70,4 @@
             
             <form onsubmit="addNewApp(event)" class="li-input-form" style="margin-top: 8px;">
                 <input type="text" id="appNameInput" placeholder="App Name (e.g. My Token Tool)" required>
-                <input type="url" id="appLinkInput" placeholder="App Link (https://...)" required>
-                <button type="submit" class="li-post-btn">Add App Button</button>
-            </form>
-
-            <div class="social-links" id="appList" style="margin-top: 12px;">
-                <!-- New app buttons will automatically appear here -->
-            </div>
-        </section>
-
-        <!-- Network & Socials Section -->
-        <section id="network" class="card">
-            <h2>Network & Socials</h2>
-            <p>Connect across the digital grid:</p>
-            <div class="social-links">
-                <a href="https://facebook.com" target="_blank" class="social-btn">Facebook</a>
-                <a href="https://linkedin.com" target="_blank" class="social-btn">LinkedIn</a>
-                <a href="https://suno.com" target="_blank" class="social-btn">Suno Audio</a>
-            </div>
-        </section>
-
-        <!-- Clean Store Section -->
-        <section id="store" class="card">
-            <h2>Official Merchandise Store</h2>
-            <p>Browse official gear directly in the shop.</p>
-            <a href="https://heavy-metal-leaf.myspreadshop.com" target="_blank" class="store-link-btn" style="margin-top: 10px; display: block; text-align: center;">VISIT STORE ➔</a>
-        </section>
-
-        <!-- Gallery Image Upload Section with Scrollable Strip -->
-        <section id="gallery" class="card">
-            <h2>Art & Photo Gallery</h2>
-            <p>Upload your images here. Scroll sideways through your collection:</p>
-            
-            <input type="file" id="imageUploader" accept="image/*" multiple onchange="uploadImages(event)" class="li-input-form" style="margin-top: 8px;">
-
-            <!-- Scrollable Horizontal Gallery Container -->
-            <div class="gallery-scroll-container" id="galleryGrid">
-                <!-- Uploaded images with order buttons will slide horizontally here -->
-            </div>
-        </section>
-
-    </div>
-
-    <!-- Script for updating video, horoscope, apps, and images -->
-    <script>
-        function updateDivination(event) {
-            event.preventDefault();
-            const inputVal = document.getElementById('videoLinkInput').value;
-            const iframe = document.querySelector('#activeVideoContainer iframe');
-            let embedUrl = inputVal;
-            if (inputVal.includes('watch?v=')) {
-                embedUrl = inputVal.replace('watch?v=', 'embed/');
-            } else if (inputVal.includes('youtu.be/')) {
-                embedUrl = inputVal.replace('youtu.be/', 'www.youtube.com/embed/');
-            }
-            iframe.src = embedUrl;
-            alert('Daily Divination video updated for today!');
-        }
-
-        function updateHoroscope(event) {
-            event.preventDefault();
-            const text = document.getElementById('horoscopeInput').value;
-            const displayBox = document.getElementById('activeHoroscope');
-            displayBox.innerHTML = `<p style="color: #d8f3dc; line-height: 1.5; white-space: pre-wrap; margin-bottom: 10px;">${text}</p>
-            <a href="https://aistudio.google.com/" target="_blank" class="store-link-btn" style="display: block; text-align: center;">Get an Extensive Reading on Google AI Studio ➔</a>`;
-            alert('Your astrology reading has been published!');
-        }
-
-        function addNewApp(event) {
-            event.preventDefault();
-            const name = document.getElementById('appNameInput').value;
-            const link = document.getElementById('appLinkInput').value;
-            const appList = document.getElementById('appList');
-
-            const newBtn = document.createElement('a');
-            newBtn.href = link;
-            newBtn.target = '_blank';
-            newBtn.className = 'social-btn';
-            newBtn.innerText = name;
-
-            appList.appendChild(newBtn);
-            document.getElementById('appNameInput').value = '';
-            document.getElementById('appLinkInput').value = '';
-            alert('App button added successfully!');
-        }
-
-        function uploadImages(event) {
-            const files = event.target.files;
-            const galleryGrid = document.getElementById('galleryGrid');
-            
-            for (let i = 0; i < files.length; i++) {
-                const file = files[i];
-                const reader = new FileReader();
-                
-                reader.onload = function(e) {
-                    const itemCard = document.createElement('div');
-                    itemCard.className = 'gallery-item';
-                    
-                    itemCard.innerHTML = `
-                        <img src="${e.target.result}" alt="Gallery Art">
-                        <a href="https://heavy-metal-leaf.myspreadshop.com" target="_blank" class="store-link-btn" style="display: block; text-align: center; font-size: 0.7rem; padding: 5px;">Order on Product ➔</a>
-                    `;
-                    galleryGrid.appendChild(itemCard);
-                }
-                
-                reader.readAsDataURL(file);
-            }
-        }
-    </script>
-
-</body>
-</html>
+                <input type="url" id="app
