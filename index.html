@@ -5,108 +5,92 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="style.css" />
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+			.content-section {
+				scroll-margin-top: 100px;
+				padding: 40px 0;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			}
+		</style>
 	</head>
-	<body class="is-preload">
+	<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-gem"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Ms. Heavy Metal Leaf</h1>
-								<p>Daily Eco-Hero Comics, Astrology Readings, & Dashboard</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#bio">Bio</a></li>
-								<li><a href="#divination">Divination</a></li>
-								<li><a href="#horoscope">Horoscope</a></li>
-								<li><a href="#apps">Apps</a></li>
-								<li><a href="#network">Network</a></li>
-								<li><a href="#store">Store</a></li>
-								<li><a href="#gallery">Gallery</a></li>
-								<li><a href="#project">Project</a></li>
-							</ul>
-						</nav>
-					</header>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Bio -->
-							<article id="bio">
-								<h2 class="major">Bio</h2>
-								<span class="image main"><img src="round_profile_image_wcreat.png" alt="Profile Image" /></span>
-								<p>Welcome to the official hub of Ms. Heavy Metal Leaf—blending hyperaccumulator plants, art, and daily eco-hero adventures.</p>
-							</article>
-
-						<!-- Divination -->
-							<article id="divination">
-								<h2 class="major">Divination</h2>
-								<p>Explore tarot readings, cosmic alignment, and intuitive guidance.</p>
-							</article>
-
-						<!-- Horoscope -->
-							<article id="horoscope">
-								<h2 class="major">Horoscope</h2>
-								<p>Monthly cosmic matches, prescriptions, and astrological forecasts tailored for your journey.</p>
-							</article>
-
-						<!-- Apps -->
-							<article id="apps">
-								<h2 class="major">Apps</h2>
-								<p>Interactive tools and scripts (powered by Python and Google AI Studio) to keep the dashboard running smoothly.</p>
-							</article>
-
-						<!-- Network -->
-							<article id="network">
-								<h2 class="major">Network</h2>
-								<p>Connect across channels, check out the latest YouTube video drops, and join the community.</p>
-							</article>
-
-						<!-- Store -->
-							<article id="store">
-								<h2 class="major">Store</h2>
-								<p>Discover merchandise, featured creations, and supporter gear.</p>
-							</article>
-
-						<!-- Gallery -->
-							<article id="gallery">
-								<h2 class="major">Gallery</h2>
-								<span class="image main"><img src="hyperaccumulatorplants_with...png" alt="Hyperaccumulator Plants" /></span>
-								<p>Visual logs, comic drops, and botanical art collections.</p>
-							</article>
-
-						<!-- Project -->
-							<article id="project">
-								<h2 class="major">Project</h2>
-								<p>Deep dive into the architecture, repository files, and ongoing updates of the Ms. Heavy Metal Leaf ecosystem.</p>
-							</article>
-
+			<!-- Top Navigation Bar -->
+			<header id="header">
+				<div class="content">
+					<div class="inner">
+						<h1>Ms. Heavy Metal Leaf</h1>
+						<p>Daily Eco-Hero Comics, Astrology Readings, & Dashboard</p>
 					</div>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="#images-section">Images</a></li>
+						<li><a href="#videos-section">Videos</a></li>
+						<li><a href="#astrology-section">Astrology</a></li>
+						<li><a href="#comics-section">Comics</a></li>
+						<li><a href="#divination-section">Divination</a></li>
+						<li><a href="#songs-section">Songs</a></li>
+						<li><a href="#network-section">Network</a></li>
+					</ul>
+				</nav>
+			</header>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; Ms. Heavy Metal Leaf. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+			<!-- Main Content Sections -->
+			<div id="main" style="padding: 40px; max-width: 900px; margin: 0 auto;">
+
+				<div id="images-section" class="content-section">
+					<h2>Images & Gallery</h2>
+					<span class="image main"><img src="hyperacumulatorplants_with_metallic_shimmer_TODAYS_TOXINS_TO (5).jpg" alt="Hyperaccumulator Plants" style="max-width:100%; border-radius:8px;" /></span>
+					<p>Moments, moods, botanical art collections, and hyperaccumulator plant logs.</p>
+				</div>
+
+				<div id="videos-section" class="content-section">
+					<h2>Videos</h2>
+					<p>Stories in motion, video updates, and your latest YouTube links.</p>
+				</div>
+
+				<div id="astrology-section" class="content-section">
+					<h2>Astrology</h2>
+					<p>Monthly cosmic matches, prescriptions, and astrological forecasts tailored for your journey.</p>
+				</div>
+
+				<div id="comics-section" class="content-section">
+					<h2>Daily Comics</h2>
+					<p>A little laugh, a little truth from your daily AI Studio comic drops.</p>
+				</div>
+
+				<div id="divination-section" class="content-section">
+					<h2>Divination</h2>
+					<p>Explore tarot readings, cosmic alignment, and intuitive guidance.</p>
+				</div>
+
+				<div id="songs-section" class="content-section">
+					<h2>Songs & Music</h2>
+					<p>Soundtracks, audio player files, and music for your day.</p>
+				</div>
+
+				<div id="network-section" class="content-section">
+					<h2>Network</h2>
+					<p>Connect across channels, check out the latest video drops, and join the community.</p>
+				</div>
 
 			</div>
 
-		<!-- BG -->
-			<div id="bg" style="background-image: url('hero-bg.jpg');"></div>
+			<!-- Footer -->
+			<footer id="footer">
+				<p class="copyright">&copy; Ms. Heavy Metal Leaf.</p>
+			</footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		</div>
+
+		<!-- Background Layer -->
+		<div id="bg" style="background-image: url('hero-bg.jpg');"></div>
 
 	</body>
 </html>
