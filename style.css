@@ -10,7 +10,6 @@ body {
     padding: 20px;
 }
 
-/* Compact Top Navigation Bar */
 .top-nav {
     max-width: 500px;
     margin: 0 auto 15px auto;
@@ -40,7 +39,6 @@ body {
     color: #ffffff;
 }
 
-/* Smaller Stacked Container */
 .stack-container {
     max-width: 500px;
     margin: 0 auto;
@@ -49,7 +47,6 @@ body {
     gap: 15px;
 }
 
-/* Smaller Compact Box Style */
 .card {
     background: rgba(15, 35, 20, 0.9);
     border-radius: 8px;
@@ -73,7 +70,6 @@ body {
     margin-bottom: 8px;
 }
 
-/* Socials & Buttons */
 .social-links {
     display: flex;
     gap: 8px;
@@ -96,7 +92,6 @@ body {
     color: #05160a;
 }
 
-/* Video Containers */
 .video-container {
     position: relative;
     width: 100%;
@@ -115,7 +110,6 @@ body {
     border-radius: 4px;
 }
 
-/* Input Form */
 .li-input-form input {
     width: 100%;
     background: #0b1f10;
