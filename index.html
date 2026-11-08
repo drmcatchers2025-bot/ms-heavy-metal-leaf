@@ -41,11 +41,11 @@
             </form>
 
             <div class="video-container" id="activeVideoContainer">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Daily Divination Reading" loading="lazy" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Daily Divination Reading" loading="lazy" allowfullscreen></iframe>
             </div>
         </section>
 
-        <!-- Network & Socials Section (With Working Links) -->
+        <!-- Network & Socials Section -->
         <section id="network" class="card">
             <h2>Network & Socials</h2>
             <p>Connect across the digital grid:</p>
@@ -63,21 +63,22 @@
             <a href="https://heavy-metal-leaf.myspreadshop.com" target="_blank" class="store-link-btn" style="margin-top: 10px; display: block; text-align: center;">VISIT STORE ➔</a>
         </section>
 
-        <!-- Gallery Image Upload Section with Order Buttons -->
+        <!-- Gallery Image Upload Section with Scrollable Strip -->
         <section id="gallery" class="card">
             <h2>Art & Photo Gallery</h2>
-            <p>Upload your images here. Each image will get its own order button:</p>
+            <p>Upload your images here. Scroll sideways through your collection:</p>
             
             <input type="file" id="imageUploader" accept="image/*" multiple onchange="uploadImages(event)" class="li-input-form" style="margin-top: 8px;">
 
-            <div class="gallery-grid" id="galleryGrid" style="margin-top: 12px; display: flex; flex-direction: column; gap: 15px;">
-                <!-- Uploaded images with buttons will show up here -->
+            <!-- Scrollable Horizontal Gallery Container -->
+            <div class="gallery-scroll-container" id="galleryGrid">
+                <!-- Uploaded images with order buttons will slide horizontally here -->
             </div>
         </section>
 
     </div>
 
-    <!-- Script for updating video and handling image uploads with order buttons -->
+    <!-- Script for updating video and handling image uploads -->
     <script>
         function updateDivination(event) {
             event.preventDefault();
@@ -103,14 +104,11 @@
                 
                 reader.onload = function(e) {
                     const itemCard = document.createElement('div');
-                    itemCard.style.background = '#0b1f10';
-                    itemCard.style.padding = '10px';
-                    itemCard.style.borderRadius = '6px';
-                    itemCard.style.border = '1px solid #2d6a4f';
+                    itemCard.className = 'gallery-item';
                     
                     itemCard.innerHTML = `
-                        <img src="${e.target.result}" style="width: 100%; border-radius: 4px; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 8px;">
-                        <a href="https://heavy-metal-leaf.myspreadshop.com" target="_blank" class="store-link-btn" style="display: block; text-align: center; margin-top: 5px;">Order This Image Onto a Product ➔</a>
+                        <img src="${e.target.result}" alt="Gallery Art">
+                        <a href="https://heavy-metal-leaf.myspreadshop.com" target="_blank" class="store-link-btn" style="display: block; text-align: center; font-size: 0.7rem; padding: 5px;">Order on Product ➔</a>
                     `;
                     galleryGrid.appendChild(itemCard);
                 }
