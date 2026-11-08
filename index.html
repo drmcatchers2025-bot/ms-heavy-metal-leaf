@@ -16,6 +16,7 @@
             <a href="#divination">Divination</a>
             <a href="#network">Network</a>
             <a href="#store">Store</a>
+            <a href="#gallery">Gallery</a>
         </nav>
     </header>
 
@@ -49,26 +50,34 @@
             <h2>Network & Socials</h2>
             <p>Connect across the digital grid:</p>
             <div class="social-links">
-                <a href="https://www.facebook.com/RAINSTAR25" target="_blank" class="social-btn">Facebook</a>
-                <a href="https://www.linkedin.com/in/dawn-milazzo-59818b380/" target="_blank" class="social-btn">LinkedIn</a>
-                <a href="https://suno.com/@dawnrainstarmilazzo" target="_blank" class="social-btn">Suno Audio</a>
+                <a href="url?id=5" target="_blank" class="social-btn">Facebook</a>
+                <a href="url?id=6" target="_blank" class="social-btn">LinkedIn</a>
+                <a href="url?id=7" target="_blank" class="social-btn">Suno Audio</a>
             </div>
         </section>
 
-        <!-- Official Store Section (Native Spreadshop Integration) -->
+        <!-- Clean Store Section -->
         <section id="store" class="card">
             <h2>Official Merchandise Store</h2>
-            <p>Browse official gear directly from the shop below:</p>
+            <p>Browse official gear directly in the shop.</p>
+            <a href="https://heavy-metal-leaf.myspreadshop.com" target="_blank" class="store-link-btn" style="margin-top: 10px;">SHOP NOW ➔</a>
+        </section>
+
+        <!-- Gallery Image Upload Section with Order Buttons -->
+        <section id="gallery" class="card">
+            <h2>Art & Photo Gallery</h2>
+            <p>Upload your images here. Each image will get its own order button:</p>
             
-            <!-- Spreadshop Embedded Container -->
-            <div id="myShop" style="margin-top: 10px;">
-                <a href="https://heavy-metal-leaf.myspreadshop.com">heavy-metal-leaf</a>
+            <input type="file" id="imageUploader" accept="image/*" multiple onchange="uploadImages(event)" class="li-input-form" style="margin-top: 8px;">
+
+            <div class="gallery-grid" id="galleryGrid" style="margin-top: 12px; display: flex; flex-direction: column; gap: 15px;">
+                <!-- Uploaded images with buttons will show up here -->
             </div>
         </section>
 
     </div>
 
-    <!-- Script to update daily video dynamically -->
+    <!-- Script for updating video and handling image uploads with order buttons -->
     <script>
         function updateDivination(event) {
             event.preventDefault();
@@ -83,19 +92,32 @@
             iframe.src = embedUrl;
             alert('Daily Divination video updated for today!');
         }
-    </script>
 
-    <!-- Spreadshop Configuration & Script -->
-    <script>
-        var spread_shop_config = {
-            shopName: 'heavy-metal-leaf',
-            locale: 'us_US',
-            prefix: 'https://heavy-metal-leaf.myspreadshop.com',
-            baseId: 'myShop'
-        };
-    </script>
-    <script type="text/javascript"
-            src="https://heavy-metal-leaf.myspreadshop.com/shopfiles/shopclient/shopclient.nocache.js">
+        function uploadImages(event) {
+            const files = event.target.files;
+            const galleryGrid = document.getElementById('galleryGrid');
+            
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    const itemCard = document.createElement('div');
+                    itemCard.style.background = '#0b1f10';
+                    itemCard.style.padding = '10px';
+                    itemCard.style.borderRadius = '6px';
+                    itemCard.style.border = '1px solid #2d6a4f';
+                    
+                    itemCard.innerHTML = `
+                        <img src="${e.target.result}" style="width: 100%; border-radius: 4px; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 8px;">
+                        <a href="https://heavy-metal-leaf.myspreadshop.com" target="_blank" class="store-link-btn" style="display: block; text-align: center; margin-top: 5px;">Order This Image Onto a Product ➔</a>
+                    `;
+                    galleryGrid.appendChild(itemCard);
+                }
+                
+                reader.readAsDataURL(file);
+            }
+        }
     </script>
 
 </body>
