@@ -23,177 +23,48 @@
         </nav>
     </header>
 
-    <!-- Main Stacked Container -->
-    <div class="stack-container">
-        
-        <!-- Bio Section -->
-        <section id="bio" class="card">
-            <h2>About</h2>
-            <p>I grew up on the Hopi/Navajo reservation. I'm white, with 14 brothers and sisters, and we built our own home with rocks and mud.</p>
-            <p><strong>Ms. Heavy Metal Leaf</strong> is separate.</p>
+    <!-- Main Content Sections -->
+    <main>
+        <section id="bio">
+            <h2>Bio</h2>
+            <p>Add your biography and background information here.</p>
         </section>
 
-        <!-- Daily Divination Section -->
-        <section id="divination" class="card">
-            <h2>📅 Daily Divination Transmission</h2>
-            <p>Paste today's video link below to update your daily reading feed:</p>
-            
-            <form onsubmit="updateDivination(event)" class="li-input-form">
-                <input type="text" id="videoLinkInput" placeholder="Paste YouTube / Video link here..." required>
-                <button type="submit" class="li-post-btn">Publish Daily Reading</button>
-            </form>
-
-            <div class="video-container" id="activeVideoContainer">
-                <iframe src="https://www.youtube.com/embed/e57vmLH3ACg" title="Daily Divination Reading" loading="lazy" allowfullscreen></iframe>
-            </div>
+        <section id="divination">
+            <h2>Divination</h2>
+            <p>Add your tarot or divination readings here.</p>
         </section>
 
-        <!-- Personal Astrology & Horoscope Section -->
-        <section id="horoscope" class="card">
-            <h2>✨ Daily Astrology Readings</h2>
-            <p>Type or update today's short astrology snippet below:</p>
-            
-            <form onsubmit="updateHoroscope(event)" class="li-input-form">
-                <textarea id="horoscopeInput" rows="3" placeholder="Write today's short horoscope..." required></textarea>
-                <button type="submit" class="li-post-btn">Publish Horoscope</button>
-            </form>
-
-            <div id="activeHoroscope" style="margin-top: 10px; background: #0b1f10; padding: 12px; border-radius: 6px; border: 1px solid #2d6a4f;">
-                <p style="font-style: italic; color: #b7e4c7; margin-bottom: 10px;">Today's astrology snippet will appear here once published...</p>
-                <a href="https://aistudio.google.com/" target="_blank" class="store-link-btn" style="display: block; text-align: center;">Get an Extensive Reading on Google AI Studio ➔</a>
-            </div>
+        <section id="horoscope">
+            <h2>Horoscope</h2>
+            <p>Add your monthly horoscopes and updates here.</p>
         </section>
 
-        <!-- Apps Section (With Instant App Adder Form) -->
-        <section id="apps" class="card">
-            <h2>📱 My Apps & Projects</h2>
-            <p>Add a new app or tool link to your page:</p>
-            
-            <form onsubmit="addNewApp(event)" class="li-input-form" style="margin-top: 8px;">
-                <input type="text" id="appNameInput" placeholder="App Name (e.g. My Token Tool)" required>
-                <input type="url" id="appLinkInput" placeholder="App Link (https://...)" required>
-                <button type="submit" class="li-post-btn">Add App Button</button>
-            </form>
-
-            <div class="social-links" id="appList" style="margin-top: 12px;">
-                <!-- New app buttons will automatically appear here -->
-            </div>
+        <section id="apps">
+            <h2>Apps</h2>
+            <p>List your applications or interactive tools here.</p>
         </section>
 
-        <!-- Network & Socials Section -->
-        <section id="network" class="card">
-            <h2>Network & Socials</h2>
-            <p>Connect across the digital grid:</p>
-            <div class="social-links">
-                <a href="https://facebook.com" target="_blank" class="social-btn">Facebook</a>
-                <a href="https://linkedin.com" target="_blank" class="social-btn">LinkedIn</a>
-                <a href="https://suno.com" target="_blank" class="social-btn">Suno Audio</a>
-            </div>
+        <section id="network">
+            <h2>Network</h2>
+            <p>Share your social links and community network here.</p>
         </section>
 
-        <!-- Clean Store Section -->
-        <section id="store" class="card">
-            <h2>Official Merchandise Store</h2>
-            <p>Browse official gear directly in the shop.</p>
-            <a href="https://heavy-metal-leaf.myspreadshop.com" target="_blank" class="store-link-btn" style="margin-top: 10px; display: block; text-align: center;">VISIT STORE ➔</a>
+        <section id="store">
+            <h2>Store</h2>
+            <p>Add your merchandise or items for sale here.</p>
         </section>
 
-        <!-- Gallery Image Upload Section with Scrollable Strip -->
-        <section id="gallery" class="card">
-            <h2>Art & Photo Gallery</h2>
-            <p>Upload your images here. Scroll sideways through your collection:</p>
-            
-            <input type="file" id="imageUploader" accept="image/*" multiple onchange="uploadImages(event)" class="li-input-form" style="margin-top: 8px;">
-
-            <!-- Scrollable Horizontal Gallery Container -->
-            <div class="gallery-scroll-container" id="galleryGrid">
-                <!-- Uploaded images with order buttons will slide horizontally here -->
-            </div>
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <p>Display your images, comics, or media files here.</p>
         </section>
 
-        <!-- Ms. Heavy Metal Leaf Project Vision Section (Placed at the End) -->
-        <section id="project" class="card">
-            <h2>🌱 Ms. Heavy Metal Leaf: The Bio-Cyborg Project</h2>
-            <p><strong>Ms. Heavy Metal Leaf</strong> is a hyperaccumulator bio-cyborg sensorbot system—a groundbreaking project being developed alongside my collaborators.</p>
-            
-            <p><strong>What are Hyperaccumulators and Phytomining?</strong><br>
-            Hyperaccumulator plants are unique botanical organisms capable of absorbing extremely high concentrations of heavy metals (like nickel, zinc, and copper) from the soil into their roots, stems, and leaves through a natural process called phytomining.</p>
-
-            <p><strong>The Growth & Sensor Integration:</strong><br>
-            She is grown directly inside a specialized clear mold embedded with micro-sensors and system components. Because the plant grows naturally into the shape and structure of the mold, there is zero messy installation required—the living biology and the electronic matrix form as one unified organism.</p>
-
-            <p><strong>Our Core Objective:</strong><br>
-            We are setting out to definitively prove that hyperaccumulator plants can be successfully utilized for growing sustainable, living circuit board frames and electronic hardware components from the ground up.</p>
+        <section id="project">
+            <h2>Project</h2>
+            <p>Detail your main project or latest updates here.</p>
         </section>
-
-    </div>
-
-    <!-- Script for updating video, horoscope, apps, and images -->
-    <script>
-        function updateDivination(event) {
-            event.preventDefault();
-            const inputVal = document.getElementById('videoLinkInput').value;
-            const iframe = document.querySelector('#activeVideoContainer iframe');
-            let embedUrl = inputVal;
-            if (inputVal.includes('watch?v=')) {
-                embedUrl = inputVal.replace('watch?v=', 'embed/');
-            } else if (inputVal.includes('youtu.be/')) {
-                embedUrl = inputVal.replace('youtu.be/', 'www.youtube.com/embed/');
-            }
-            iframe.src = embedUrl;
-            alert('Daily Divination video updated for today!');
-        }
-
-        function updateHoroscope(event) {
-            event.preventDefault();
-            const text = document.getElementById('horoscopeInput').value;
-            const displayBox = document.getElementById('activeHoroscope');
-            displayBox.innerHTML = `<p style="color: #d8f3dc; line-height: 1.6; white-space: pre-wrap; margin-bottom: 12px; font-size: 0.95rem;">${text}</p>
-            <a href="https://aistudio.google.com/" target="_blank" class="store-link-btn" style="display: block; text-align: center;">Get an Extensive Reading on Google AI Studio ➔</a>`;
-            alert('Your astrology reading has been published!');
-        }
-
-        function addNewApp(event) {
-            event.preventDefault();
-            const name = document.getElementById('appNameInput').value;
-            const link = document.getElementById('appLinkInput').value;
-            const appList = document.getElementById('appList');
-
-            const newBtn = document.createElement('a');
-            newBtn.href = link;
-            newBtn.target = '_blank';
-            newBtn.className = 'social-btn';
-            newBtn.innerText = name;
-
-            appList.appendChild(newBtn);
-            document.getElementById('appNameInput').value = '';
-            document.getElementById('appLinkInput').value = '';
-            alert('App button added successfully!');
-        }
-
-        function uploadImages(event) {
-            const files = event.target.files;
-            const galleryGrid = document.getElementById('galleryGrid');
-            
-            for (let i = 0; i < files.length; i++) {
-                const file = files[i];
-                const reader = new FileReader();
-                
-                reader.onload = function(e) {
-                    const itemCard = document.createElement('div');
-                    itemCard.className = 'gallery-item';
-                    
-                    itemCard.innerHTML = `
-                        <img src="${e.target.result}" alt="Gallery Art">
-                        <a href="https://heavy-metal-leaf.myspreadshop.com" target="_blank" class="store-link-btn" style="display: block; text-align: center; font-size: 0.75rem; padding: 6px;">Order on Product ➔</a>
-                    `;
-                    galleryGrid.appendChild(itemCard);
-                }
-                
-                reader.readAsDataURL(file);
-            }
-        }
-    </script>
+    </main>
 
 </body>
 </html>
