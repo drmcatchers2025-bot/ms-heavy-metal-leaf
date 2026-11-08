@@ -14,6 +14,8 @@
         <nav>
             <a href="#bio">Bio</a>
             <a href="#divination">Divination</a>
+            <a href="#horoscope">Horoscope</a>
+            <a href="#apps">Apps</a>
             <a href="#network">Network</a>
             <a href="#store">Store</a>
             <a href="#gallery">Gallery</a>
@@ -45,14 +47,48 @@
             </div>
         </section>
 
+        <!-- Daily Astrology & Horoscope Section -->
+        <section id="horoscope" class="card">
+            <h2>✨ Daily Astrology Readings</h2>
+            <p>Type or update today's short astrology snippet below:</p>
+            
+            <form onsubmit="updateHoroscope(event)" class="li-input-form">
+                <textarea id="horoscopeInput" rows="3" placeholder="Write today's short horoscope..." required></textarea>
+                <button type="submit" class="li-post-btn">Publish Horoscope</button>
+            </form>
+
+            <div id="activeHoroscope" style="margin-top: 10px; background: #0b1f10; padding: 12px; border-radius: 6px; border: 1px solid #2d6a4f;">
+                <p style="font-style: italic; color: #b7e4c7; margin-bottom: 10px;">Today's astrology snippet will appear here once published...</p>
+            </div>
+
+            <!-- Link to Google AI Studio for extensive readings -->
+            <a href="https://aistudio.google.com/" target="_blank" class="store-link-btn" style="display: block; text-align: center; margin-top: 12px;">Get an Extensive Reading on Google AI Studio ➔</a>
+        </section>
+
+        <!-- Apps Section (With Instant App Adder Form) -->
+        <section id="apps" class="card">
+            <h2>📱 My Apps & Projects</h2>
+            <p>Add a new app or tool link to your page:</p>
+            
+            <form onsubmit="addNewApp(event)" class="li-input-form" style="margin-top: 8px;">
+                <input type="text" id="appNameInput" placeholder="App Name (e.g. My Token Tool)" required>
+                <input type="url" id="appLinkInput" placeholder="App Link (https://...)" required>
+                <button type="submit" class="li-post-btn">Add App Button</button>
+            </form>
+
+            <div class="social-links" id="appList" style="margin-top: 12px;">
+                <!-- New app buttons will automatically appear here -->
+            </div>
+        </section>
+
         <!-- Network & Socials Section -->
         <section id="network" class="card">
             <h2>Network & Socials</h2>
             <p>Connect across the digital grid:</p>
             <div class="social-links">
-                <a href="https://www.facebook.com/RAINSTAR25" target="_blank" class="social-btn">Facebook</a>
-                <a href="https://www.linkedin.com/in/dawn-milazzo-59818b380/" target="_blank" class="social-btn">LinkedIn</a>
-                <a href="https://suno.com/@dawnrainstarmilazzo" target="_blank" class="social-btn">Suno Audio</a>
+                <a href="https://facebook.com" target="_blank" class="social-btn">Facebook</a>
+                <a href="https://linkedin.com" target="_blank" class="social-btn">LinkedIn</a>
+                <a href="https://suno.com" target="_blank" class="social-btn">Suno Audio</a>
             </div>
         </section>
 
@@ -78,7 +114,7 @@
 
     </div>
 
-    <!-- Script for updating video and handling image uploads -->
+    <!-- Script for updating video, horoscope, apps, and images -->
     <script>
         function updateDivination(event) {
             event.preventDefault();
@@ -92,6 +128,33 @@
             }
             iframe.src = embedUrl;
             alert('Daily Divination video updated for today!');
+        }
+
+        function updateHoroscope(event) {
+            event.preventDefault();
+            const text = document.getElementById('horoscopeInput').value;
+            const displayBox = document.getElementById('activeHoroscope');
+            displayBox.innerHTML = `<p style="color: #d8f3dc; line-height: 1.5; white-space: pre-wrap; margin-bottom: 10px;">${text}</p>
+            <a href="https://aistudio.google.com/" target="_blank" class="store-link-btn" style="display: block; text-align: center;">Get an Extensive Reading on Google AI Studio ➔</a>`;
+            alert('Your astrology reading has been published!');
+        }
+
+        function addNewApp(event) {
+            event.preventDefault();
+            const name = document.getElementById('appNameInput').value;
+            const link = document.getElementById('appLinkInput').value;
+            const appList = document.getElementById('appList');
+
+            const newBtn = document.createElement('a');
+            newBtn.href = link;
+            newBtn.target = '_blank';
+            newBtn.className = 'social-btn';
+            newBtn.innerText = name;
+
+            appList.appendChild(newBtn);
+            document.getElementById('appNameInput').value = '';
+            document.getElementById('appLinkInput').value = '';
+            alert('App button added successfully!');
         }
 
         function uploadImages(event) {
