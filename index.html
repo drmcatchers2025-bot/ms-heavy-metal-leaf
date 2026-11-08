@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ms. Heavy Metal Leaf | Ecosystem</title>
+    <title>Ms. Heavy Metal Leaf</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,30 +14,25 @@
         <nav>
             <a href="#bio">Bio</a>
             <a href="#divination">Divination</a>
-            <a href="#feed">Feed</a>
-            <a href="https://your-spreadshop-url-here" target="_blank">Store</a>
+            <a href="#network">Network</a>
+            <a href="#store">Store</a>
         </nav>
     </header>
 
-    <!-- Main Stacked Container (Flows Up & Down) -->
+    <!-- Main Stacked Container -->
     <div class="stack-container">
         
-        <!-- 1. Bio Section -->
+        <!-- Bio Section -->
         <section id="bio" class="card">
-            <h2>Roots & Ecosystem</h2>
-            <p>Raised in a self-built rock-and-mud house on the Hopi/Navajo reservation. Survived severe infection and ended alcohol addiction in 2017.</p>
-            <p>Anchored in Bremerton, WA, building the <strong>Ms. Heavy Metal Leaf</strong> hyperaccumulator system—transmuting past toxins into heavy art.</p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/RAINSTAR25" target="_blank" class="social-btn">Facebook</a>
-                <a href="https://www.linkedin.com/in/dawn-milazzo-59818b380/" target="_blank" class="social-btn">LinkedIn</a>
-                <a href="https://suno.com/@dawnrainstarmilazzo" target="_blank" class="social-btn">Suno Audio</a>
-            </div>
+            <h2>About</h2>
+            <p>I grew up on the Hopi/Navajo reservation. I'm white, with 14 brothers and sisters, and we built our own home with rocks and mud.</p>
+            <p><strong>Ms. Heavy Metal Leaf</strong> is separate.</p>
         </section>
 
-        <!-- 2. Daily Divination Section (With Link Updater) -->
+        <!-- Daily Divination Section -->
         <section id="divination" class="card">
             <h2>📅 Daily Divination Transmission</h2>
-            <p>Paste today's video link below to update the reading feed:</p>
+            <p>Paste today's video link below to update your daily reading feed:</p>
             
             <form onsubmit="updateDivination(event)" class="li-input-form">
                 <input type="text" id="videoLinkInput" placeholder="Paste YouTube / Video link here..." required>
@@ -49,39 +44,31 @@
             </div>
         </section>
 
-        <!-- 3. Community Feed & Comments Section -->
-        <section id="feed" class="card">
-            <h2>Network Feed & Discussions</h2>
-            
-            <!-- Create a Post Box -->
-            <div style="margin-bottom: 15px;">
-                <textarea placeholder="Share your thoughts with the network..." rows="2" id="userPostText" style="width:100%; background:#0b1f10; border:1px solid #40916c; border-radius:6px; color:#fff; padding:10px; font-size:0.85rem; box-sizing:border-box; margin-bottom:8px;"></textarea>
-                <button onclick="addPost()" class="li-post-btn">Post to Feed</button>
-            </div>
-
-            <!-- Feed Stream -->
-            <div id="postsStream">
-                <div class="li-feed-post">
-                    <p><strong>System Admin</strong> · Today</p>
-                    <p>Welcome to the live grid feed. Latest thoughts from botanical research, heavy frequencies, and industrial reclamation are online.</p>
-                    <div class="post-comments-section">
-                        <input type="text" placeholder="Add a comment..." class="comment-input">
-                        <button class="comment-btn">Comment</button>
-                    </div>
-                </div>
+        <!-- Network & Socials Section -->
+        <section id="network" class="card">
+            <h2>Network & Socials</h2>
+            <p>Connect across the digital grid:</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/RAINSTAR25" target="_blank" class="social-btn">Facebook</a>
+                <a href="https://www.linkedin.com/in/dawn-milazzo-59818b380/" target="_blank" class="social-btn">LinkedIn</a>
+                <a href="https://suno.com/@dawnrainstarmilazzo" target="_blank" class="social-btn">Suno Audio</a>
             </div>
         </section>
 
-        <!-- 4. Official Store Section -->
-        <section class="card">
+        <!-- Official Store Section (Native Spreadshop Integration) -->
+        <section id="store" class="card">
             <h2>Official Merchandise Store</h2>
-            <p>Browse official gear from the green industrial ecosystem.</p>
-            <a href="https://your-spreadshop-url-here" target="_blank" class="store-link-btn" style="margin-top: 10px;">VISIT STORE ➔</a>
+            <p>Browse official gear directly from the shop below:</p>
+            
+            <!-- Spreadshop Embedded Container -->
+            <div id="myShop" style="margin-top: 10px;">
+                <a href="https://heavy-metal-leaf.myspreadshop.com">heavy-metal-leaf</a>
+            </div>
         </section>
 
     </div>
 
-    <!-- Script to update daily video and add posts -->
+    <!-- Script to update daily video dynamically -->
     <script>
         function updateDivination(event) {
             event.preventDefault();
@@ -96,24 +83,19 @@
             iframe.src = embedUrl;
             alert('Daily Divination video updated for today!');
         }
+    </script>
 
-        function addPost() {
-            const text = document.getElementById('userPostText').value;
-            if (!text) return;
-            const stream = document.getElementById('postsStream');
-            const newPost = document.createElement('div');
-            newPost.className = 'li-feed-post';
-            newPost.innerHTML = `
-                <p><strong>Community Member</strong> · Just now</p>
-                <p>${text}</p>
-                <div class="post-comments-section">
-                    <input type="text" placeholder="Add a comment..." class="comment-input">
-                    <button class="comment-btn">Comment</button>
-                </div>
-            `;
-            stream.prepend(newPost);
-            document.getElementById('userPostText').value = '';
-        }
+    <!-- Spreadshop Configuration & Script -->
+    <script>
+        var spread_shop_config = {
+            shopName: 'heavy-metal-leaf',
+            locale: 'us_US',
+            prefix: 'https://heavy-metal-leaf.myspreadshop.com',
+            baseId: 'myShop'
+        };
+    </script>
+    <script type="text/javascript"
+            src="https://heavy-metal-leaf.myspreadshop.com/shopfiles/shopclient/shopclient.nocache.js">
     </script>
 
 </body>
