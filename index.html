@@ -6,87 +6,242 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="style.css" />
 		<style>
+			:root {
+				--bg-color: #121019;
+				--card-bg: rgba(255, 255, 255, 0.06);
+				--card-border: rgba(255, 255, 255, 0.12);
+				--text-main: #f3f0fb;
+				--text-muted: #b8b0c8;
+				--accent: #d4af37;
+			}
+
 			html {
 				scroll-behavior: smooth;
 			}
+
+			body {
+				background-color: var(--bg-color);
+				color: var(--text-main);
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+			}
+
+			.container {
+				max-width: 900px;
+				margin: 0 auto;
+				padding: 40px 20px;
+				position: relative;
+				z-index: 2;
+			}
+
+			/* Top Navigation Bar */
+			header.top-nav {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding-bottom: 20px;
+				border-bottom: 1px solid var(--card-border);
+				margin-bottom: 40px;
+				position: sticky;
+				top: 0;
+				background-color: rgba(18, 16, 25, 0.95);
+				backdrop-filter: blur(10px);
+				z-index: 1000;
+				padding-top: 20px;
+			}
+
+			.logo-area {
+				font-weight: bold;
+				letter-spacing: 1px;
+				font-size: 1.1em;
+				color: var(--accent);
+				display: flex;
+				align-items: center;
+				gap: 10px;
+			}
+
+			.logo-area img {
+				width: 36px;
+				height: 36px;
+				border-radius: 50%;
+				object-fit: cover;
+			}
+
+			nav.menu {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 15px;
+			}
+
+			nav.menu a {
+				color: var(--text-muted);
+				text-decoration: none;
+				font-size: 0.9em;
+				transition: color 0.2s;
+				cursor: pointer;
+				padding: 6px 12px;
+				border-radius: 20px;
+				background: var(--card-bg);
+				border: 1px solid var(--card-border);
+			}
+
+			nav.menu a:hover {
+				color: var(--text-main);
+				border-color: var(--accent);
+			}
+
+			/* Header Intro */
+			.intro {
+				text-align: center;
+				margin-bottom: 50px;
+			}
+
+			.intro h1 {
+				font-size: 2.8em;
+				margin-bottom: 15px;
+				color: var(--text-main);
+				background: linear-gradient(135deg, #4ade80, #2dd4bf, #f59e0b);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+
+			.intro p {
+				color: var(--text-muted);
+				font-size: 1.2em;
+			}
+
+			/* Vertical Section Rows Layout */
 			.content-section {
+				background: var(--card-bg);
+				border: 1px solid var(--card-border);
+				border-radius: 16px;
+				padding: 35px;
+				margin-bottom: 30px;
 				scroll-margin-top: 100px;
+				backdrop-filter: blur(5px);
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+			}
+
+			.content-section h2 {
+				color: var(--accent);
+				margin-top: 0;
+				font-size: 1.6em;
+				border-bottom: 1px solid var(--card-border);
+				padding-bottom: 12px;
+			}
+
+			.content-section p {
+				color: var(--text-main);
+				line-height: 1.7;
+				font-size: 1.05em;
+			}
+
+			.content-section img {
+				max-width: 100%;
+				border-radius: 10px;
+				margin-top: 15px;
+				border: 1px solid var(--card-border);
+			}
+
+			/* Background Image Styling with Overlay */
+			#bg {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				background-size: cover;
+				background-position: center;
+				z-index: -1;
+				opacity: 0.25;
+			}
+
+			/* Footer */
+			footer {
+				text-align: center;
 				padding: 40px 0;
-				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+				border-top: 1px solid var(--card-border);
+				color: var(--text-muted);
+				font-size: 0.9em;
+				margin-top: 50px;
 			}
 		</style>
 	</head>
 	<body>
 
-		<div id="wrapper">
-
-			<!-- Top Navigation Bar -->
-			<header id="header">
-				<div class="content">
-					<div class="inner">
-						<h1>Ms. Heavy Metal Leaf</h1>
-						<p>Daily Eco-Hero Comics, Astrology Readings, & Dashboard</p>
-					</div>
+		<div class="container">
+			<!-- Top Navigation Bar (Interactive Buttons) -->
+			<header class="top-nav">
+				<div class="logo-area">
+					<img src="round_profile_image_vvcreate_a_image_of_the_bad_thing_from_m (1).jpg" alt="Profile" />
+					<span>MS. HEAVY METAL LEAF</span>
 				</div>
-				<nav>
-					<ul>
-						<li><a href="#images-section">Images</a></li>
-						<li><a href="#videos-section">Videos</a></li>
-						<li><a href="#astrology-section">Astrology</a></li>
-						<li><a href="#comics-section">Comics</a></li>
-						<li><a href="#divination-section">Divination</a></li>
-						<li><a href="#songs-section">Songs</a></li>
-						<li><a href="#network-section">Network</a></li>
-					</ul>
+				<nav class="menu">
+					<a href="#bio-section">Bio</a>
+					<a href="#images-section">Images</a>
+					<a href="#videos-section">Videos</a>
+					<a href="#astrology-section">Astrology</a>
+					<a href="#comics-section">Comics</a>
+					<a href="#divination-section">Divination</a>
+					<a href="#songs-section">Songs</a>
+					<a href="#network-section">Network</a>
 				</nav>
 			</header>
 
-			<!-- Main Content Sections -->
-			<div id="main" style="padding: 40px; max-width: 900px; margin: 0 auto;">
+			<!-- Simple Intro Header -->
+			<div class="intro">
+				<h1>Ms. Heavy Metal Leaf</h1>
+				<p>Daily Eco-Hero Comics, Hyperaccumulator Plants, & Cosmic Astrology Dashboard</p>
+			</div>
 
-				<div id="images-section" class="content-section">
-					<h2>Images & Gallery</h2>
-					<span class="image main"><img src="hyperacumulatorplants_with_metallic_shimmer_TODAYS_TOXINS_TO (5).jpg" alt="Hyperaccumulator Plants" style="max-width:100%; border-radius:8px;" /></span>
-					<p>Moments, moods, botanical art collections, and hyperaccumulator plant logs.</p>
-				</div>
+			<!-- Sequential Target Sections for Buttons -->
+			<div id="bio-section" class="content-section">
+				<h2>Bio & Story</h2>
+				<img src="round_profile_image_vvcreate_a_image_of_the_bad_thing_from_m (1).jpg" alt="Profile portrait" />
+				<p>Welcome to the official hub of Ms. Heavy Metal Leaf—blending hyperaccumulator plants, art, grit forged in high desert traditions, and daily eco-hero adventures.</p>
+			</div>
 
-				<div id="videos-section" class="content-section">
-					<h2>Videos</h2>
-					<p>Stories in motion, video updates, and your latest YouTube links.</p>
-				</div>
+			<div id="images-section" class="content-section">
+				<h2>Images & Gallery</h2>
+				<img src="hyperacumulatorplants_with_metallic_shimmer_TODAYS_TOXINS_TO (5).jpg" alt="Hyperaccumulator Plants" />
+				<p>Moments, moods, botanical art collections, and hyperaccumulator plant logs.</p>
+			</div>
 
-				<div id="astrology-section" class="content-section">
-					<h2>Astrology</h2>
-					<p>Monthly cosmic matches, prescriptions, and astrological forecasts tailored for your journey.</p>
-				</div>
+			<div id="videos-section" class="content-section">
+				<h2>Videos</h2>
+				<p>Stories in motion, video updates, and your latest YouTube channel drops.</p>
+			</div>
 
-				<div id="comics-section" class="content-section">
-					<h2>Daily Comics</h2>
-					<p>A little laugh, a little truth from your daily AI Studio comic drops.</p>
-				</div>
+			<div id="astrology-section" class="content-section">
+				<h2>Astrology</h2>
+				<p>Monthly cosmic matches, planetary prescriptions, and celestial breakdowns tailored for your journey.</p>
+			</div>
 
-				<div id="divination-section" class="content-section">
-					<h2>Divination</h2>
-					<p>Explore tarot readings, cosmic alignment, and intuitive guidance.</p>
-				</div>
+			<div id="comics-section" class="content-section">
+				<h2>Daily Comics</h2>
+				<p>A little laugh, a little truth from your daily AI Studio eco-hero comic drops.</p>
+			</div>
 
-				<div id="songs-section" class="content-section">
-					<h2>Songs & Music</h2>
-					<p>Soundtracks, audio player files, and music for your day.</p>
-				</div>
+			<div id="divination-section" class="content-section">
+				<h2>Divination</h2>
+				<p>Explore tarot readings, cosmic alignment, and intuitive guidance draws for daily reflection.</p>
+			</div>
 
-				<div id="network-section" class="content-section">
-					<h2>Network</h2>
-					<p>Connect across channels, check out the latest video drops, and join the community.</p>
-				</div>
+			<div id="songs-section" class="content-section">
+				<h2>Songs & Music</h2>
+				<p>Soundtracks, audio files, and suno-generated music tracks for your day.</p>
+			</div>
 
+			<div id="network-section" class="content-section">
+				<h2>Network</h2>
+				<p>Connect across channels, check out creator links, and join the community.</p>
 			</div>
 
 			<!-- Footer -->
-			<footer id="footer">
-				<p class="copyright">&copy; Ms. Heavy Metal Leaf.</p>
+			<footer>
+				<p>&copy; Ms. Heavy Metal Leaf. Built with dark cosmic magic &hearts;</p>
 			</footer>
-
 		</div>
 
 		<!-- Background Layer -->
