@@ -1,23 +1,21 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Ms. Heavy Metal Leaf</title>
+		<title>Rainstar Astrology & Ms. Heavy Metal Leaf</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="style.css" />
 		<style>
 			:root {
-				--bg-color: #121019;
-				--card-bg: rgba(255, 255, 255, 0.06);
-				--card-border: rgba(255, 255, 255, 0.12);
+				--bg-color: #0b0a10;
+				--card-bg: rgba(20, 18, 30, 0.9);
+				--card-border: rgba(212, 175, 55, 0.3);
 				--text-main: #f3f0fb;
 				--text-muted: #b8b0c8;
 				--accent: #d4af37;
+				--emerald: #4ade80;
 			}
 
-			html {
-				scroll-behavior: smooth;
-			}
+			html { scroll-behavior: smooth; }
 
 			body {
 				background-color: var(--bg-color);
@@ -28,14 +26,13 @@
 			}
 
 			.container {
-				max-width: 900px;
+				max-width: 1000px;
 				margin: 0 auto;
-				padding: 40px 20px;
+				padding: 30px 20px;
 				position: relative;
 				z-index: 2;
 			}
 
-			/* Top Navigation Bar */
 			header.top-nav {
 				display: flex;
 				justify-content: space-between;
@@ -45,7 +42,7 @@
 				margin-bottom: 40px;
 				position: sticky;
 				top: 0;
-				background-color: rgba(18, 16, 25, 0.95);
+				background-color: rgba(11, 10, 16, 0.95);
 				backdrop-filter: blur(10px);
 				z-index: 1000;
 				padding-top: 20px;
@@ -54,36 +51,25 @@
 			.logo-area {
 				font-weight: bold;
 				letter-spacing: 1px;
-				font-size: 1.1em;
+				font-size: 1.2em;
 				color: var(--accent);
-				display: flex;
-				align-items: center;
-				gap: 10px;
-			}
-
-			.logo-area img {
-				width: 36px;
-				height: 36px;
-				border-radius: 50%;
-				object-fit: cover;
 			}
 
 			nav.menu {
 				display: flex;
 				flex-wrap: wrap;
-				gap: 15px;
+				gap: 10px;
 			}
 
 			nav.menu a {
 				color: var(--text-muted);
 				text-decoration: none;
-				font-size: 0.9em;
-				transition: color 0.2s;
-				cursor: pointer;
+				font-size: 0.85em;
 				padding: 6px 12px;
 				border-radius: 20px;
 				background: var(--card-bg);
 				border: 1px solid var(--card-border);
+				transition: all 0.2s;
 			}
 
 			nav.menu a:hover {
@@ -91,161 +77,185 @@
 				border-color: var(--accent);
 			}
 
-			/* Header Intro */
-			.intro {
-				text-align: center;
-				margin-bottom: 50px;
-			}
-
-			.intro h1 {
-				font-size: 2.8em;
-				margin-bottom: 15px;
-				color: var(--text-main);
-				background: linear-gradient(135deg, #4ade80, #2dd4bf, #f59e0b);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-			}
-
-			.intro p {
-				color: var(--text-muted);
-				font-size: 1.2em;
-			}
-
-			/* Vertical Section Rows Layout */
-			.content-section {
+			.section-box {
 				background: var(--card-bg);
 				border: 1px solid var(--card-border);
 				border-radius: 16px;
 				padding: 35px;
-				margin-bottom: 30px;
-				scroll-margin-top: 100px;
-				backdrop-filter: blur(5px);
-				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+				margin-bottom: 35px;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 			}
 
-			.content-section h2 {
+			h2 {
 				color: var(--accent);
-				margin-top: 0;
-				font-size: 1.6em;
 				border-bottom: 1px solid var(--card-border);
-				padding-bottom: 12px;
+				padding-bottom: 10px;
+				margin-top: 0;
 			}
 
-			.content-section p {
-				color: var(--text-main);
-				line-height: 1.7;
-				font-size: 1.05em;
+			.store-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+				gap: 20px;
+				margin-top: 20px;
 			}
 
-			.content-section img {
-				max-width: 100%;
-				border-radius: 10px;
-				margin-top: 15px;
+			.store-item {
+				background: rgba(0,0,0,0.4);
 				border: 1px solid var(--card-border);
+				border-radius: 10px;
+				padding: 15px;
+				text-align: center;
 			}
 
-			/* Background Image Styling with Overlay */
-			#bg {
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100vw;
-				height: 100vh;
-				background-size: cover;
-				background-position: center;
-				z-index: -1;
-				opacity: 0.25;
+			.store-item img {
+				width: 100%;
+				height: 140px;
+				object-fit: cover;
+				border-radius: 6px;
+				margin-bottom: 10px;
 			}
 
-			/* Footer */
+			.store-btn {
+				display: inline-block;
+				background: var(--accent);
+				color: #000;
+				padding: 8px 16px;
+				border-radius: 20px;
+				text-decoration: none;
+				font-weight: bold;
+				font-size: 0.85em;
+				margin-top: 10px;
+			}
+
+			.comic-panel {
+				background: #000;
+				border: 2px solid var(--emerald);
+				border-radius: 10px;
+				padding: 20px;
+				margin-top: 15px;
+			}
+
 			footer {
 				text-align: center;
-				padding: 40px 0;
-				border-top: 1px solid var(--card-border);
+				padding: 30px 0;
 				color: var(--text-muted);
+				border-top: 1px solid var(--card-border);
 				font-size: 0.9em;
-				margin-top: 50px;
 			}
 		</style>
 	</head>
 	<body>
 
 		<div class="container">
-			<!-- Top Navigation Bar (Interactive Buttons) -->
 			<header class="top-nav">
-				<div class="logo-area">
-					<img src="round_profile_image_vvcreate_a_image_of_the_bad_thing_from_m (1).jpg" alt="Profile" />
-					<span>MS. HEAVY METAL LEAF</span>
-				</div>
+				<div class="logo-area">✨ RAINSTAR ASTROLOGY</div>
 				<nav class="menu">
-					<a href="#bio-section">Bio</a>
-					<a href="#images-section">Images</a>
-					<a href="#videos-section">Videos</a>
-					<a href="#astrology-section">Astrology</a>
-					<a href="#comics-section">Comics</a>
-					<a href="#divination-section">Divination</a>
-					<a href="#songs-section">Songs</a>
-					<a href="#network-section">Network</a>
+					<a href="#reading">Daily Reading</a>
+					<a href="#comic">Eco-Comic</a>
+					<a href="#store">Store Gallery</a>
 				</nav>
 			</header>
 
-			<!-- Simple Intro Header -->
-			<div class="intro">
-				<h1>Ms. Heavy Metal Leaf</h1>
-				<p>Daily Eco-Hero Comics, Hyperaccumulator Plants, & Cosmic Astrology Dashboard</p>
+			<!-- Rainstar Astrology Unified Daily Reading -->
+			<div id="reading" class="section-box">
+				<h2>Rainstar Astrology: Unified Daily Synthesis</h2>
+				<p><em>Runic, Chinese Zodiac, I-Ching, Intuitive, Chemical, Geomantic, Geometric, & Psychic Synthesis with Tarot & Prescription.</em></p>
+				
+				<div style="background: rgba(212,175,55,0.05); padding: 20px; border-radius: 10px; border-left: 4px solid var(--accent); margin: 20px 0;">
+					<h3 style="margin-top:0; color: var(--accent);">Tarot Focus Card: The Alchemical Leaf</h3>
+					<p><strong>Full Synthesis:</strong> Today combines Runic direction with Chinese Zodiac flow, I-Ching hexagram grounding, chemical element balancing, geomantic earth grids, sacred geometry, and psychic intuition to clear environmental static.</p>
+					<p><strong>Daily Prescription:</strong> Ground your energy, protect local ecosystems, and focus your intent on clarity and renewal.</p>
+				</div>
 			</div>
 
-			<!-- Sequential Target Sections for Buttons -->
-			<div id="bio-section" class="content-section">
-				<h2>Bio & Story</h2>
-				<img src="round_profile_image_vvcreate_a_image_of_the_bad_thing_from_m (1).jpg" alt="Profile portrait" />
-				<p>Welcome to the official hub of Ms. Heavy Metal Leaf—blending hyperaccumulator plants, art, grit forged in high desert traditions, and daily eco-hero adventures.</p>
+			<!-- Ms. Heavy Metal Leaf Daily Comic -->
+			<div id="comic" class="section-box">
+				<h2>Ms. Heavy Metal Leaf: Daily Eco-Crime Comic</h2>
+				<p><em>Channeling the One Power and Hyperaccumulator Powers against environmental villains.</em></p>
+				<div class="comic-panel">
+					<p style="color: var(--emerald); font-family: monospace; margin-top:0;">[PANEL 1: THE TOXIC SPILL]</p>
+					<p>Corporate polluters dump industrial waste under the cover of night. But Ms. Heavy Metal Leaf senses the disturbance across the soil grid!</p>
+					<p style="color: var(--emerald); font-family: monospace;">[PANEL 2: CHANNELING THE ONE POWER]</p>
+					<p><strong>Ms. Heavy Metal Leaf:</strong> "You can't hide your heavy metal poison from the earth!" With shimmering metallic leaves and the One Power blazing in her hands, she extracts the toxins directly from the runoff.</p>
+					<p style="color: var(--emerald); font-family: monospace;">[PANEL 3: JUSTICE RESTORED]</p>
+					<p>The polluters retreat in awe as clean water flows freely. Another eco-crime defeated!</p>
+				</div>
 			</div>
 
-			<div id="images-section" class="content-section">
-				<h2>Images & Gallery</h2>
-				<img src="hyperacumulatorplants_with_metallic_shimmer_TODAYS_TOXINS_TO (5).jpg" alt="Hyperaccumulator Plants" />
-				<p>Moments, moods, botanical art collections, and hyperaccumulator plant logs.</p>
+			<!-- Store Gallery (10 Changeable Browse Images with Store Links) -->
+			<div id="store" class="section-box">
+				<h2>Browse & Order From Our Store</h2>
+				<p>Explore our 10 featured items and prints available directly in our shop.</p>
+				
+				<div class="store-grid">
+					<!-- Item 1 -->
+					<div class="store-item">
+						<img src="hyperacumulatorplants_with_metallic_shimmer_TODAYS_TOXINS_TO (5).jpg" alt="Item 1" />
+						<div><strong>Item 01 Print</strong></div>
+						<a href="YOUR_SPREADSHOP_URL_HERE" target="_blank" class="store-btn">Order from Store</a>
+					</div>
+					<!-- Item 2 -->
+					<div class="store-item">
+						<img src="round_profile_image_vvcreate_a_image_of_the_bad_thing_from_m (1).jpg" alt="Item 2" />
+						<div><strong>Item 02 Print</strong></div>
+						<a href="YOUR_SPREADSHOP_URL_HERE" target="_blank" class="store-btn">Order from Store</a>
+					</div>
+					<!-- Item 3 -->
+					<div class="store-item">
+						<img src="hyperaccumulatorplants_with...png" alt="Item 3" />
+						<div><strong>Item 03 Print</strong></div>
+						<a href="YOUR_SPREADSHOP_URL_HERE" target="_blank" class="store-btn">Order from Store</a>
+					</div>
+					<!-- Item 4 -->
+					<div class="store-item">
+						<img src="hero-bg.jpg" alt="Item 4" />
+						<div><strong>Item 04 Print</strong></div>
+						<a href="YOUR_SPREADSHOP_URL_HERE" target="_blank" class="store-btn">Order from Store</a>
+					</div>
+					<!-- Item 5 -->
+					<div class="store-item">
+						<img src="round_profile_image_wcreat.png" alt="Item 5" />
+						<div><strong>Item 05 Print</strong></div>
+						<a href="YOUR_SPREADSHOP_URL_HERE" target="_blank" class="store-btn">Order from Store</a>
+					</div>
+					<!-- Item 6 -->
+					<div class="store-item">
+						<img src="hyperacumulatorplants_with_metallic_shimmer_TODAYS_TOXINS_TO (5).jpg" alt="Item 6" />
+						<div><strong>Item 06 Print</strong></div>
+						<a href="YOUR_SPREADSHOP_URL_HERE" target="_blank" class="store-btn">Order from Store</a>
+					</div>
+					<!-- Item 7 -->
+					<div class="store-item">
+						<img src="round_profile_image_vvcreate_a_image_of_the_bad_thing_from_m (1).jpg" alt="Item 7" />
+						<div><strong>Item 07 Print</strong></div>
+						<a href="YOUR_SPREADSHOP_URL_HERE" target="_blank" class="store-btn">Order from Store</a>
+					</div>
+					<!-- Item 8 -->
+					<div class="store-item">
+						<img src="hyperaccumulatorplants_with...png" alt="Item 8" />
+						<div><strong>Item 08 Print</strong></div>
+						<a href="YOUR_SPREADSHOP_URL_HERE" target="_blank" class="store-btn">Order from Store</a>
+					</div>
+					<!-- Item 9 -->
+					<div class="store-item">
+						<img src="hero-bg.jpg" alt="Item 9" />
+						<div><strong>Item 09 Print</strong></div>
+						<a href="YOUR_SPREADSHOP_URL_HERE" target="_blank" class="store-btn">Order from Store</a>
+					</div>
+					<!-- Item 10 -->
+					<div class="store-item">
+						<img src="round_profile_image_wcreat.png" alt="Item 10" />
+						<div><strong>Item 10 Print</strong></div>
+						<a href="YOUR_SPREADSHOP_URL_HERE" target="_blank" class="store-btn">Order from Store</a>
+					</div>
+				</div>
 			</div>
 
-			<div id="videos-section" class="content-section">
-				<h2>Videos</h2>
-				<p>Stories in motion, video updates, and your latest YouTube channel drops.</p>
-			</div>
-
-			<div id="astrology-section" class="content-section">
-				<h2>Astrology</h2>
-				<p>Monthly cosmic matches, planetary prescriptions, and celestial breakdowns tailored for your journey.</p>
-			</div>
-
-			<div id="comics-section" class="content-section">
-				<h2>Daily Comics</h2>
-				<p>A little laugh, a little truth from your daily AI Studio eco-hero comic drops.</p>
-			</div>
-
-			<div id="divination-section" class="content-section">
-				<h2>Divination</h2>
-				<p>Explore tarot readings, cosmic alignment, and intuitive guidance draws for daily reflection.</p>
-			</div>
-
-			<div id="songs-section" class="content-section">
-				<h2>Songs & Music</h2>
-				<p>Soundtracks, audio files, and suno-generated music tracks for your day.</p>
-			</div>
-
-			<div id="network-section" class="content-section">
-				<h2>Network</h2>
-				<p>Connect across channels, check out creator links, and join the community.</p>
-			</div>
-
-			<!-- Footer -->
 			<footer>
-				<p>&copy; Ms. Heavy Metal Leaf. Built with dark cosmic magic &hearts;</p>
+				<p>&copy; Rainstar Astrology & Ms. Heavy Metal Leaf. All rights reserved.</p>
 			</footer>
 		</div>
-
-		<!-- Background Layer -->
-		<div id="bg" style="background-image: url('hero-bg.jpg');"></div>
 
 	</body>
 </html>
